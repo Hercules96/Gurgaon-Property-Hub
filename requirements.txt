@@ -9,4 +9,3 @@ plotly
 wordcloud
 matplotlib
 seaborn
-pickle
