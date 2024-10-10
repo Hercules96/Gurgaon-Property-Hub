@@ -34,50 +34,50 @@ st.markdown("""
 This map visualizes the price per square foot in various sectors of Gurgaon. Larger and darker circles represent higher prices, with a clear distinction of premium sectors.
 """)
 
-# Visualization 2: Wordcloud of Common Features in the Selected Sector
-st.header("2. Wordcloud of Features Common in Selected Sector")
-wordcloud_df = pd.read_csv('dataset/wordcloud.csv')
-# st.dataframe(wordcloud_df)
+# # Visualization 2: Wordcloud of Common Features in the Selected Sector
+# st.header("2. Wordcloud of Features Common in Selected Sector")
+# wordcloud_df = pd.read_csv('dataset/wordcloud.csv')
+# # st.dataframe(wordcloud_df)
 
-list = ['all sector']+sorted(wordcloud_df['sector'].unique())
+# list = ['all sector']+sorted(wordcloud_df['sector'].unique())
 
-sector = st.selectbox("Select the sector",sorted(list))
+# sector = st.selectbox("Select the sector",sorted(list))
 
-def sector_wordcloud(sector):
-    feature=[]
-    if sector=='all sector':
-        for item in wordcloud_df['features'].dropna().apply(ast.literal_eval):
-            feature.extend(item)
-    else:
-        sample = wordcloud_df[wordcloud_df['sector']==sector]
-        for item in sample['features'].dropna().apply(ast.literal_eval):
-            feature.extend(item)
-    feature= ' '.join(feature)
-    feature= feature.replace('/','')
-    return feature
+# def sector_wordcloud(sector):
+#     feature=[]
+#     if sector=='all sector':
+#         for item in wordcloud_df['features'].dropna().apply(ast.literal_eval):
+#             feature.extend(item)
+#     else:
+#         sample = wordcloud_df[wordcloud_df['sector']==sector]
+#         for item in sample['features'].dropna().apply(ast.literal_eval):
+#             feature.extend(item)
+#     feature= ' '.join(feature)
+#     feature= feature.replace('/','')
+#     return feature
 
-st.set_option('deprecation.showPyplotGlobalUse', False)
-if st.button('Create Wordcloud'):
-    sector_features = sector_wordcloud(sector)
+# st.set_option('deprecation.showPyplotGlobalUse', False)
+# if st.button('Create Wordcloud'):
+#     sector_features = sector_wordcloud(sector)
 
-    wordcloud = WordCloud(width=800, height=800,
-                          background_color='black',
-                          stopwords=set(['s']),  # Any stopwords you'd like to exclude
-                          min_font_size=10).generate(sector_features)
+#     wordcloud = WordCloud(width=800, height=800,
+#                           background_color='black',
+#                           stopwords=set(['s']),  # Any stopwords you'd like to exclude
+#                           min_font_size=10).generate(sector_features)
 
-    plt.figure(figsize=(8, 8), facecolor=None)
-    plt.imshow(wordcloud, interpolation='bilinear')
-    plt.axis("off")
-    plt.tight_layout(pad=0)
-    st.pyplot()
-else:
-    pass
+#     plt.figure(figsize=(8, 8), facecolor=None)
+#     plt.imshow(wordcloud, interpolation='bilinear')
+#     plt.axis("off")
+#     plt.tight_layout(pad=0)
+#     st.pyplot()
+# else:
+#     pass
 
-# Summary for Wordcloud
-st.markdown(f"""
-**Summary**:  
-This word cloud highlights the most common features in properties listed in **Sector {sector}**. Larger words represent features that are more frequently mentioned.
-""")
+# # Summary for Wordcloud
+# st.markdown(f"""
+# **Summary**:  
+# This word cloud highlights the most common features in properties listed in **Sector {sector}**. Larger words represent features that are more frequently mentioned.
+# """)
 
 # Visualization 3: Area vs Price Scatter Plot with Bedrooms as Hue
 st.header("3. Area vs. Price Scatter Plot (Hue: Bedrooms)")
