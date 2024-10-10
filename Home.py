@@ -24,7 +24,7 @@ st.markdown("""
 # Applying the custom CSS class to a heading
 st.markdown('<h1 class="custom-heading">Gurgaon Apartment Hub</h1>', unsafe_allow_html=True)
 
-st.image("C:\Project_Real_Estate_Prediction\Abhinav-Real-estate-Project-Website\dataset\Resident-property-in-gugram.png", caption="Gurgaon Skyline", use_column_width=True)
+st.image("dataset/Resident-property-in-gugram.png", caption="Gurgaon Skyline", use_column_width=True)
 
 # Title
 st.title("Welcome to Gurgaon Apartment Hub")
@@ -69,9 +69,9 @@ col1, col2, col3 = st.columns(3)
 from PIL import Image
 
 # Open the image using PIL
-image_Apartment = Image.open("C:\Project_Real_Estate_Prediction\Abhinav-Real-estate-Project-Website\dataset\Apartment Recommendation.png")
-image_price = Image.open("C:\Project_Real_Estate_Prediction\Abhinav-Real-estate-Project-Website\dataset\Price Predictor.jpg")
-image_recommendation = Image.open("C:\Project_Real_Estate_Prediction\Abhinav-Real-estate-Project-Website\dataset\Visualization.png")
+image_Apartment = Image.open("dataset/Apartment Recommendation.png")
+image_price = Image.open("dataset/Price Predictor.jpg")
+image_recommendation = Image.open("dataset/Visualization.png")
 
 # Resize the image to your desired dimensions
 resized_image_Apartment = image_Apartment.resize((300, 200))  # Width: 300, Height: 200
