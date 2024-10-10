@@ -57,10 +57,10 @@ Discover the estimated value of your property with just a few clicks. Our advanc
 st.subheader("Enter your preferences")
 
 # Load the data and model
-with open(r'C:\Project_Real_Estate_Prediction\Abhinav-Real-estate-Project-Website\data_version2.pkl', 'rb') as file:
+with open(r'data_version2.pkl', 'rb') as file:
     df = pickle.load(file)
 
-with open(r'C:\Project_Real_Estate_Prediction\Abhinav-Real-estate-Project-Website\model_version2.pkl', 'rb') as file:
+with open(r'model_version2.pkl', 'rb') as file:
     model = pickle.load(file)
 
 # Property_type (assume this should be treated as categorical)
@@ -121,8 +121,8 @@ if st.button('Predict'):
 
     # Make the prediction
     prediction = np.expm1(model.predict(one_df))
-    lower_range = (prediction - 0.08)
-    upper_range = (prediction + 0.08)
+    lower_range = (prediction+1.5 - 0.08)
+    upper_range = (prediction+1.5 + 0.08)
 
 
     # st.write("The Property price will fall in the range of {:.2f} Cr to {:.2f} Cr".format(
