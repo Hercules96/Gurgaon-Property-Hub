@@ -1,0 +1,4 @@
+[theme]
+backgroundColor = "#ffffff"  # Sets the background color to white
+primaryColor = "#000000"     # Optional: Sets the primary color (e.g., text color)
+secondaryBackgroundColor = "#f0f0f0"  # Optional: Sets the color for secondary backgrounds
