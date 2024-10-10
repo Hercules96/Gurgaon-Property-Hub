@@ -5,17 +5,17 @@ import streamlit as st
 
 st.set_page_config(page_title='Appartment Recommendation')
 #Loading the dataset to fetch the indexes
-location_df = pickle.load(open('C:\Project_Real_Estate_Prediction\Abhinav-Real-estate-Project-Website\dataset\location_df.pkl','rb'))
+location_df = pickle.load(open('dataset/location_df.pkl','rb'))
 
 
 #Loading the similarity based on the features
-cosine_sim1 = pickle.load(open('C:\Project_Real_Estate_Prediction\Abhinav-Real-estate-Project-Website\dataset\cosine1.pkl','rb'))
+cosine_sim1 = pickle.load(open('dataset/cosine1.pkl','rb'))
 
 #Loading the similarity based on the PriceDetails
-cosine_sim2 = pickle.load(open('C:\Project_Real_Estate_Prediction\Abhinav-Real-estate-Project-Website\dataset\cosine2.pkl','rb'))
+cosine_sim2 = pickle.load(open('dataset/cosine2.pkl','rb'))
 
 # #Loading the similarity based on the PriceDetails
-cosine_sim3 = pickle.load(open('C:\Project_Real_Estate_Prediction\Abhinav-Real-estate-Project-Website\dataset\cosine3.pkl','rb'))
+cosine_sim3 = pickle.load(open('dataset/cosine3.pkl','rb'))
 
 def recommend_properties_with_scores(property_name, top_n=247):
     # Calculating the collected similarity by providing weights to the individual features
