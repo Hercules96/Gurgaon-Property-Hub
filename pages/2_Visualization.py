@@ -12,7 +12,7 @@ st.set_page_config(page_title="Gurgaon Apartment Hub - Visualizations", layout="
 st.title('Analytics')
 
 #Scatter plot using langitude and longitude
-new_df = pd.read_csv('C:\Project_Real_Estate_Prediction\Abhinav-Real-estate-Project-Website\dataset\data_viz1.csv')
+new_df = pd.read_csv('dataset/data_viz1.csv')
 
 group_df = new_df.groupby('sector').mean(numeric_only=True)[['price', 'price_per_sqft','built_up_area','latitude', 'longitude']]
 
@@ -36,7 +36,7 @@ This map visualizes the price per square foot in various sectors of Gurgaon. Lar
 
 # Visualization 2: Wordcloud of Common Features in the Selected Sector
 st.header("2. Wordcloud of Features Common in Selected Sector")
-wordcloud_df = pd.read_csv('C:\Project_Real_Estate_Prediction\Abhinav-Real-estate-Project-Website\dataset\wordcloud.csv')
+wordcloud_df = pd.read_csv('dataset/wordcloud.csv')
 # st.dataframe(wordcloud_df)
 
 list = ['all sector']+sorted(wordcloud_df['sector'].unique())
