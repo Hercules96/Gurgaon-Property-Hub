@@ -2,3 +2,10 @@ streamlit
 pandas
 scikit-learn
 xgboost
+pickle-mixin
+numpy
+Pillow
+plotly
+wordcloud
+matplotlib
+seaborn
