@@ -27,7 +27,7 @@ st.markdown("""
 st.markdown('<h1 class="custom-heading">Gurgaon Properties Hub</h1>', unsafe_allow_html=True)
 
 # Load the image
-image_path = r'C:\Project_Real_Estate_Prediction\Abhinav-Real-estate-Project-Website\dataset\Price Predictor.jpg'
+image_path = r'dataset/Price Predictor.jpg'
 image = Image.open(image_path)
 
 def image_to_base64(img):
